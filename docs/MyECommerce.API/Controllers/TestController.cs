@@ -8,12 +8,12 @@ namespace MyECommerce.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CategoryController : ControllerBase
+    public class TestController : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Scalar test başarılı!");
+            return Ok("Test succeeded");
         }
     }
 }

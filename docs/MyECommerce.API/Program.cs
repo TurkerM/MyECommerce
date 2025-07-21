@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyECommerce.API.Data;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,5 +19,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
+app.MapScalarApiReference();
 app.MapControllers();
 app.Run();
