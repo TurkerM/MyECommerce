@@ -10,10 +10,6 @@ namespace MyECommerce.API.Controllers
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok("Scalar test başarılı!");
-        }
+        
     }
 }
