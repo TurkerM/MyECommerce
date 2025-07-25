@@ -1,21 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MyECommerce.API.Data;
+using MyECommerce.Domain.Entities;
 
 namespace MyECommerce.API.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class OrderController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
     private readonly IHttpContextAccessor _httpContext;
 
-    public OrderController(AppDbContext context, IHttpContextAccessor httpContext)
+    public OrderController(ApplicationDbContext context, IHttpContextAccessor httpContext)
     {
         _context = context;
         _httpContext = httpContext;
